@@ -1,0 +1,23 @@
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file+'.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@mixin buttonGral() {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  margin-top: 3rem;
+  background-color: $color-green;
+  color: $color-black;
+  font-weight: bold;
+  transition: 500ms;
+  &:hover {
+    color: $color-white;
+    background: linear-gradient(90deg, $color-green 30%, $color-blue 100%);
+  }
+}

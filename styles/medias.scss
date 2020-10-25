@@ -1,0 +1,176 @@
+@media (min-width: 576px) {
+  #episodes {
+    .skewed {
+      padding: 5rem 5rem 8rem 5rem;
+      h2 { padding-left: 2rem; }
+      .podcasts {
+        div { padding: 16px; }
+      }
+    }
+  }
+  #womens-code {
+    div {
+      &:first-child {
+        display: flex;
+        justify-content: center;
+        img { width: 60%; }
+      }
+      &:last-child {
+        padding: 0px 30px;
+      }
+    }
+  }
+  #guests {
+    div {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  #topics {
+    .topic-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      div {
+        img { width: 50%; }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  #menu {
+    #menuToggle {
+      padding: 20px 50px;
+      a {
+        &.navbar-brand img { width: 50px; }
+      }
+      div { display: none; }
+    }
+    input { display: none; }
+    input~nav>ul { display: block; }
+    nav {
+      position: absolute;
+      top: 0;
+      width: auto;
+      right: 0;
+      ul {
+        background: $color-white;
+        li {
+          display: inline-block;
+          a {
+            color: $color-black;
+            display: block;
+            padding: 16px;
+            &:hover {
+              color: $color-green;
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+    }
+  }
+  #header {
+    div {
+      padding: 7rem;
+      h1 {
+        &, span { font-size: 3rem; }
+      }
+      p { width: 60%; }
+      a {
+        display: inline-block;
+        padding: 16px 45px;
+      }
+    }
+  }
+  #episodes {
+    .skewed {
+      padding: 5rem 5rem 8rem 5rem;
+      h2 { padding-left: 2rem; }
+      .podcasts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 4rem;
+        row-gap: 4rem;
+        div { padding: 0; }
+      }
+    }
+  }
+  #womens-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+      &:first-child {
+        top: -12rem;
+        width: 40%;
+        padding: 90px 25px;
+        img { width: 100%; }
+      }
+      &:last-child {
+        top: -10rem;
+        width: 40%;
+      }
+    }
+  }
+  #guests {
+    top: -12rem;
+    h2 {
+      padding-left: 7rem;
+    }
+    div {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  #topics {
+    padding: 0px;
+    position: relative;
+    top: -6rem;
+    h2 { padding-left: 7rem; }
+    .topic-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      div {
+        img { width: 50%; }
+      }
+    }
+  }
+  #news {
+    .skewed {
+      div {
+        a { display: inline-block; }
+      }
+    }
+  }
+  #footer {
+    display: flex;
+    justify-content: space-around;
+    ul {
+      margin-top: 0;
+      li { padding: 0 1rem; }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #womens-code {
+    div {
+      &:first-child {
+        top: -12rem;
+        width: 30%;
+        padding: 65px 40px;
+      }
+    }
+  }
+  #topics {
+    .topic-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      div {
+        img { width: 50%; }
+      }
+    }
+  }
+}

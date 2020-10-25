@@ -1,0 +1,223 @@
+@include font($ibm-mono, '../fonts/IBMPlexMono-Regular');
+@include font($ibm-sans, '../fonts/IBMPlexSans-Regular');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $ibm-mono, arial, sans-serif;
+  font-size: 16px;
+}
+
+h1, h2 {
+  font-family: $ibm-sans, arial, sans-serif;
+}
+h2 { font-size: 2rem; }
+img { width: 100%;}
+a { text-decoration: none; }
+
+#menu {
+  position: fixed;
+  width: 100%;
+  background-color: $color-white;
+  z-index: 1;
+  #menuToggle {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    a {
+      &.navbar-brand img {
+        width: 40px;
+      }
+    }
+    div {
+      width: 35px;
+      position: absolute;
+      right: 5%;
+      z-index: 1;
+      span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: $color-black;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+      }
+    }
+  }
+  input {
+    position: absolute;
+    right: 5%;
+    top: 10px;
+    height: 35px;
+    width: 35px;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    & ~ nav>ul {
+      display: none;
+    }
+  }
+  input:checked {
+    & ~ nav>ul {
+      display: block;
+    }
+  }
+  nav {
+    position: absolute;
+    width: 100%;
+    ul {
+      list-style: none;
+      padding: 16px;
+      background: $color-blue;
+      li {
+        display: block;
+        text-align: center;
+        a {
+          color: $color-white;
+          display: block;
+          padding: 16px;
+          &:hover {
+            color: $color-green;
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+}
+#header {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  div {
+    padding: 16px;
+    h1 {
+      span:first-child {
+        text-decoration: line-through;
+      }
+      span.dot-blue { color: $color-blue-secondary; }
+      &, span { font-size: 2rem; }
+    }
+    p {
+      text-align: justify;
+      margin-top: 1rem;
+    }
+    a { @include buttonGral(); }
+  }
+}
+#episodes {
+  position: relative;
+  .skewed {
+    z-index: 0;
+    transform: skewY(-5deg);
+    transform-origin: top left;
+    padding: 3rem 16px 9rem 16px;
+    background: $color-blue-secondary;
+    background: linear-gradient(180deg, $color-blue-secondary 8%, $color-blue-tertiary 100%);
+    h2 {
+      color: $color-white;
+      margin-bottom: 2rem;
+    }
+    .podcasts div iframe {
+      width: 100%;
+      border: none;
+    }
+    h2, .podcasts { transform: skewY(5deg); }
+  }
+}
+#womens-code {
+  padding: 16px;
+  div {
+    position: relative;
+    &:first-child { top: -7rem; }
+    &:last-child {
+      top: -5rem;
+      h2 { margin-bottom: 1rem; }
+    }
+  }
+}
+#guests {
+  position: relative;
+  top: -4rem;
+  h2 {
+    padding: 16px;
+    margin-bottom: 1rem;
+  }
+  img { display: block; }
+}
+#topics {
+  padding: 16px;
+  margin-bottom: 5rem;
+  h2 { margin-bottom: 2rem; }
+  .topic-list {
+    div {
+      padding: 30px 45px;
+      img, p {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+      }
+      img {
+        width: 30%;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-family: $ibm-sans;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+#news {
+  .skewed {
+    padding: 16px;
+    height: 50vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background: $color-blue-secondary;
+    background: linear-gradient(180deg, $color-blue-secondary 8%, $color-blue-tertiary 100%);
+    &:after {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transform-origin: top left;
+      transform: skew(0deg,-5deg);
+      background: $color-blue-secondary;
+      background: linear-gradient(180deg, $color-blue-secondary 8%, $color-blue-tertiary 100%);
+    }
+    div {
+      text-align: center;
+      h2 { color: $color-white; }
+      a { @include buttonGral(); }
+    }
+  }
+}
+#footer {
+  padding: 35px 16px;
+  p { text-align: center; }
+  ul {
+    list-style: none;
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    li {
+      display: inline-block;
+      a { color: $color-black; }
+    }
+  }
+}
